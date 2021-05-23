@@ -6,13 +6,15 @@ const displayData = async () => {
   const quoteImg = [...document.querySelectorAll(".quote__img")];
   const quoteName = [...document.querySelectorAll(".quote__name")];
 
-  for (let i = 0; i < quoteImg.length; i++) {
-    quoteImg[i].src = users[i].img;
-  }
+  quoteImg.forEach((_, idx) => {
+    quoteImg[idx].src = users[idx].img;
+  });
 
-  for (let j = 0; j < quoteName.length; j++) {
-    quoteName[j].textContent = `${users[j].firstName} ${users[j].lastName}`;
-  }
+  quoteName.forEach((_, idx) => {
+    quoteName[
+      idx
+    ].textContent = `${users[idx].firstName} ${users[idx].lastName}`;
+  });
 };
 
 export default displayData;
