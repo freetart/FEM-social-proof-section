@@ -13,7 +13,7 @@
 @mixin headingStyles() {
   font-weight: 700;
   letter-spacing: 0.2rem;
-  line-height: 1.6;
+  line-height: 1.2;
 }
 
 @mixin textStyles() {
@@ -36,4 +36,31 @@
 @mixin maxWidthSm() {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+// media queries
+@mixin responsive($breakpoint) {
+  @if ($breakpoint == xl) {
+    @media (max-width: 1240px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == lg) {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == md) {
+    @media (max-width: 870px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == sm) {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
 }

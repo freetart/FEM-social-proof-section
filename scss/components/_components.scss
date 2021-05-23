@@ -2,3 +2,113 @@
 @use '../abstracts/base';
 @use "../abstracts/mixins" as mix;
 @use "../abstracts/variables" as var;
+
+// rating cards
+.testimonials-title {
+  &__rating {
+    background-color: var.color(lightGrayishMagenta);
+    border-radius: var.$radius;
+    box-shadow: var.$ratingShadow;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 1.5rem auto;
+    padding: 2.1rem 2.5rem;
+
+    @include mix.responsive(xl) {
+      padding: 1.5rem 2rem;
+    }
+
+    @include mix.responsive(md) {
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      transform: translateX(4rem);
+
+      @include mix.responsive(xl) {
+        transform: translateX(0);
+      }
+    }
+    &:nth-child(3) {
+      transform: translateX(8rem);
+
+      @include mix.responsive(xl) {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    width: 1.5rem;
+    margin: 0 0.5rem;
+  }
+
+  &__rating-desc {
+    @include mix.headingStyles;
+    font-size: var.size(xxs);
+    color: var.color(darkMagenta);
+    padding: 1rem;
+  }
+}
+
+// quote card
+.quote {
+  background-color: var.color(darkMagenta);
+  color: var.color(lightGrayishMagenta);
+  border-radius: var.$radius;
+  box-shadow: var.$cardShadow;
+
+  &:nth-child(1) {
+    transform: translateY(-4rem);
+
+    @include mix.responsive(lg) {
+      transform: translateY(0);
+    }
+  }
+  &:nth-child(3) {
+    transform: translateY(4rem);
+
+    @include mix.responsive(lg) {
+      transform: translateY(0);
+    }
+  }
+
+  &__content {
+    padding: 4rem;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    width: 5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+  &__name {
+    @include mix.headingStyles;
+    font-size: var.size(xxs);
+  }
+
+  &__verifed {
+    @include mix.textStyles;
+    font-size: var.size(xxs);
+    color: var.color(softPink);
+  }
+
+  &__desc {
+    @include mix.textStyles;
+    font-size: var.size(xxs) + 0.1rem;
+    margin-top: 2rem;
+  }
+}
