@@ -6,6 +6,56 @@
 // testimonials
 .testimonials {
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &__bg-top {
+    position: absolute;
+    width: 70%;
+    top: -10rem;
+    left: -10rem;
+    z-index: -1;
+
+    @include mix.responsive(xl) {
+      top: -5rem;
+      left: -5rem;
+    }
+
+    @include mix.responsive(lg) {
+      top: 0;
+      left: 0;
+      width: 80%;
+    }
+
+    @include mix.responsive(lg) {
+      top: 5rem;
+      left: 5rem;
+      width: 100%;
+    }
+  }
+
+  &__bg-bottom {
+    position: absolute;
+    width: 70%;
+    bottom: -10rem;
+    right: -10rem;
+    z-index: -1;
+
+    @include mix.responsive(xl) {
+      bottom: -5rem;
+      right: -5rem;
+    }
+
+    @include mix.responsive(lg) {
+      bottom: 0;
+      right: 0;
+      width: 80%;
+    }
+
+    @include mix.responsive(md) {
+      width: 100%;
+    }
+  }
 
   &-content {
     @include mix.maxWidthLg;
