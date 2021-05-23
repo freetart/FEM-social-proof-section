@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="shortcut icon" href="./images/favicon/koala.ico" />
     <link rel="stylesheet" href="./css/main.min.css" />
     <title>Frontend Mentor Social Proof Section</title>
@@ -34,7 +36,7 @@
       <div class="testimonials-content">
         <!-- testimonials title -->
         <div class="testimonials-title">
-          <div class="col">
+          <div class="col" data-aos="fade-right">
             <h1 class="testimonials-title__heading">
               10,000+ of our users love our products.
             </h1>
@@ -44,7 +46,7 @@
               services.
             </p>
           </div>
-          <div class="col">
+          <div class="col" data-aos="fade-left">
             <!-- single rating -->
             <div class="testimonials-title__rating">
               <div class="testimonials-title__stars">
@@ -162,7 +164,7 @@
           </div>
         </div>
         <!-- quote cards -->
-        <div class="testimonials-quotes">
+        <div class="testimonials-quotes" data-aos="fade-up">
           <!-- single quote card -->
           <article class="quote">
             <div class="quote__content">
@@ -261,6 +263,12 @@
         class="footer__logo"
       />
     </footer>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 100, duration: 1000, once: true });
+    </script>
+    <!-- js -->
     <script src="./js/main.js"></script>
   </body>
 </html>
