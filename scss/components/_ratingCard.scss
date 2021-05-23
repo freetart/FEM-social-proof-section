@@ -1,0 +1,59 @@
+// imports
+@use '../abstracts/base';
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+// rating card
+.testimonials-title {
+  &__rating {
+    background-color: var.color(lightGrayishMagenta);
+    border-radius: var.$radius;
+    box-shadow: var.$ratingShadow;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 1.5rem auto;
+    padding: 2.1rem 2.5rem;
+
+    @include mix.responsive(xl) {
+      padding: 1.5rem 2rem;
+    }
+
+    @include mix.responsive(md) {
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      transform: translateX(4rem);
+
+      @include mix.responsive(xl) {
+        transform: translateX(0);
+      }
+    }
+    &:nth-child(3) {
+      transform: translateX(8rem);
+
+      @include mix.responsive(xl) {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    width: 1.5rem;
+    margin: 0 0.5rem;
+  }
+
+  &__rating-desc {
+    @include mix.headingStyles;
+    font-size: var.size(xxs);
+    color: var.color(darkMagenta);
+    padding: 1rem;
+  }
+}
